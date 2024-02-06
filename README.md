@@ -1,5 +1,17 @@
 # How to Generate a Maven Project
 
+***Disclaimer 1***: This was tested on macOS. Other operating systems should be
+similar. If not, it is my hope that this guide will at least point you in the
+correct direction.
+
+## Sources
+
+1. [Maven in Five Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
+2. [Maven Basics, How Inheritance Works](https://www.youtube.com/watch?v=KNGQ9JBQWhQ)
+3. [Project Creator: ](https://start.spring.io/)<https://start.spring.io/>
+4. [Maven Shade Plugin](https://maven.apache.org/plugins/maven-shade-plugin/)
+5. [Junit Setup](https://www.digitalocean.com/community/tutorials/junit-setup-maven)
+
 ## Contents
 
 1. [Installing Maven](#installing-maven)
