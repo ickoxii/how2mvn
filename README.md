@@ -4,6 +4,12 @@
 similar. If not, it is my hope that this guide will at least point you in the
 correct direction.
 
+***Disclaimer 2***: USE THE SCRIPT `./init.sh` AT YOUR OWN RISK.
+It was made for personal use on macOS, but it seems to work ok.
+Type `./init.sh -h` for usage information.
+As long as you are able to run `make` and `mvn` from the command line,
+the script should work.
+
 ## Sources
 
 1. [Maven in Five Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
@@ -54,6 +60,7 @@ project. Run the command below, changing the `-DgroupId` and `-DartifactId`.
 * `-DgroupId`: name of the organization in charge of the project
     * i.e. `edu.baylor.ecs.csi3471.YourName`
 * `-DartifactId`: name of the built project
+    * i.e. `Assignment-4`
 
 ```zsh
 mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
