@@ -61,8 +61,6 @@ echo "Main Class: $main_class"
 main_class_noext="${main_class%%.*}"
 echo "Main Class No Extension: $main_class_noext"
 
-#!/bin/bash
-
 while true; do
     # Prompt the user for input
     echo ""
@@ -91,13 +89,13 @@ set_artifact="-DartifactId=$artifact_id"
 set_archetype="-DarchetypeArtifactId=maven-archetype-quickstart"
 set_interact="-DinteractiveMode=false"
 
-# FIX_ME calling mvn archetype:generate does not work
+# FIX_ME: calling mvn archetype:generate does not work
 # mvn archetype:generate $set_group $set_artifact $set_archetype $set_interact
 
+# FIX_ME: but generating a makefile and calling it from there works???
 # Generate Makefile to build Maven project
 sed -e "s/D_GROUP_ID:=.*/D_GROUP_ID:=$group_id/g; \
         s/D_ARTIFACT_ID:=.*/D_ARTIFACT_ID:=$artifact_id/g" $template_make > Makefile
-
 make build-mvn
 
 # Make edits to pom
@@ -106,6 +104,7 @@ sed -e "s/<groupId><!--[^<]*<\/groupId>/<groupId>${group_id}<\/groupId>/g; \
         s/<version><!--[^<]*<\/version>/<version>${version}<\/version>/g; \
         s/<mainClass><!--[^<]*<\/mainClass>/<mainClass>${group_id}.${main_class_noext}<\/mainClass>/g" $template_pom > pom.xml
  
+# Move final pom file into our maven project
 mv pom.xml $artifact_id/pom.xml
 cd $artifact_id/
 mvn package
